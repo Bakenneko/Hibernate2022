@@ -41,6 +41,9 @@ public class Main {
         session.createQuery("select u from User u",User.class).list();
         System.out.println(list);
 
+        User user = session.find(User.class,2);
+        System.out.println(user);
+
         session.getTransaction().commit();
 
         session.close();
