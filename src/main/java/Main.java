@@ -23,6 +23,14 @@ public class Main {
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
         Session session = sessionFactory.openSession();
 
+        session.beginTransaction();
+
+
+        session.save(new User("Nick","Patton"));
+        session.save(new User("Sherlock","Homes"));
+        session.save(new User("Jack"));
+
+        session.getTransaction().commit();
 
         session.close();
         sessionFactory.close();
