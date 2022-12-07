@@ -5,15 +5,15 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.url">
-            jdbc:mysql://localhost:3306/june2022?createDatabaseIfNoExist=true
+            jdbc:mysql://localhost:3306/Hibernate2022?createDatabaseIfNotExist=true
         </property>
         <property name="connection.driver_class">
             com.mysql.jdbc.Driver
         </property>
         <property name="connection.username">root</property>
-        <property name="connection.password">rootroot</property>
+        <property name="connection.password">Jr54Y;c-f7</property>
         <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="org.hibernate.boot.hibernate.dialect.MySQLdialect"></property>
         <property name="show_sql">true</property>
-
     </session-factory>
 </hibernate-configuration>

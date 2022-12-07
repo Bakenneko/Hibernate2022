@@ -1,5 +1,4 @@
-package org.example;
-
+import model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -15,10 +14,17 @@ public class Main {
                 .configure("hibernate.cfg.xml")
                 .build();
 
-        Metadata metadata = new MetadataSources(serviceRegistry).addAnnotatedClass(null).getMetadataBuilder().build();
+        Metadata metadata =
+                new MetadataSources(serviceRegistry)
+                        .addAnnotatedClass(User.class)
+                        .getMetadataBuilder()
+                        .build();
 
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
         Session session = sessionFactory.openSession();
 
+
+        session.close();
+        sessionFactory.close();
     }
 }
